@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationIcon>Resources\mush.ico</ApplicationIcon>
+    <PackageIcon>mushA.png</PackageIcon>
+    <SignAssembly>false</SignAssembly>
+    <PackageId>ValheimBackupUtility</PackageId>
+    <Authors>Jordynarz</Authors>
+    <Product>VBU</Product>
+    <Description>A simple tool to backup local Valheim worlds and characters. Simply browse to a destination folder and press the Backup button to copy your worlds and characters to that location.</Description>
+    <Company>Love&amp;Peace</Company>
+    <AssemblyName>ValheimBackupUtility</AssemblyName>
+    <RootNamespace>ValheimBackup</RootNamespace>
+    <RepositoryUrl>https://github.com/jordynarz/ValheimBackupUtility</RepositoryUrl>
+    <RepositoryType>Public</RepositoryType>
+    <PackageTags>Valheim, backup, worlds, chacracters, c#</PackageTags>
+    <PackageReleaseNotes>Initial release of the Valheim backup utility to help people easily make copies of their local files.</PackageReleaseNotes>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Resources\mushA.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
