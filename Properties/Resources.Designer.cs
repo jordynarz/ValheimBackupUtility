@@ -61,11 +61,21 @@ namespace ValheimBackup.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mushA {
+            get {
+                object obj = ResourceManager.GetObject("mushA", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon mush {
+        internal static System.Drawing.Icon mushIcon {
             get {
-                object obj = ResourceManager.GetObject("mush", resourceCulture);
+                object obj = ResourceManager.GetObject("mushIcon", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
@@ -73,9 +83,9 @@ namespace ValheimBackup.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap mushA {
+        internal static System.Drawing.Bitmap mushIconn {
             get {
-                object obj = ResourceManager.GetObject("mushA", resourceCulture);
+                object obj = ResourceManager.GetObject("mushIconn", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

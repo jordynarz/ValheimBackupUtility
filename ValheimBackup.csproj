@@ -4,8 +4,8 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
-    <ApplicationIcon>Resources\mush.ico</ApplicationIcon>
-    <PackageIcon>mushA.png</PackageIcon>
+    <ApplicationIcon>Resources\mushIcon.ico</ApplicationIcon>
+    <PackageIcon>mushIconn.png</PackageIcon>
     <SignAssembly>false</SignAssembly>
     <PackageId>ValheimBackupUtility</PackageId>
     <Authors>Jordynarz</Authors>
@@ -36,7 +36,19 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Resources\mushA.png">
+    <None Include="..\..\..\Downloads\Mush\Mush\mushA.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\..\..\Downloads\Mush\Mush\mushA.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\..\..\Downloads\Mush\Mush\mushA.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="Resources\mushIconn.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
