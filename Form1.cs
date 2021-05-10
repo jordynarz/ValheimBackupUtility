@@ -188,7 +188,7 @@ namespace ValheimBackup
             thePaths(out string worldsPath, out _, out _);
             // backup the worlds
             string startPath = worldsPath;
-            string zipPath = @".\worlds.zip";
+            string zipPath = Path.GetFullPath(LblBrowse.Text + @"\worlds.zip");
             string extractPath = dir + @"\worlds";
 
             // if the zip file already exists. Delete it so the app can zip it up again.
@@ -216,7 +216,7 @@ namespace ValheimBackup
 
             // backup the worlds
             string startPath = charsPath;
-            string zipPath = @".\characters.zip";
+            string zipPath = Path.GetFullPath(LblBrowse.Text + @"\characters.zip");
             string extractPath = dir + @"\characters";
 
             // if the zip file already exists. Delete it so the app can zip it up again.
