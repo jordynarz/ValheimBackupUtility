@@ -142,8 +142,7 @@ namespace ValheimBackup
                     theAudio(out System.Media.SoundPlayer snd);
 
 
-                    // Step the progress bar manually
-                    progressBar1.PerformStep();
+
                     // run the method that zips and unzips the worlds folder
                     cpWorlds(dir);
 
@@ -184,11 +183,12 @@ namespace ValheimBackup
         // method for zipping and zipping the worlds folder and contents to a new location.
         private void cpWorlds(string dir)
         {
+            
             // call the User path method "_" discarding one argument
             thePaths(out string worldsPath, out _, out _);
             // backup the worlds
             string startPath = worldsPath;
-            string zipPath = @".\worlds.zip";
+            string zipPath = Path.GetFullPath(LblBrowse.Text + @"\worlds.zip");
             string extractPath = dir + @"\worlds";
 
             // if the zip file already exists. Delete it so the app can zip it up again.
@@ -216,7 +216,7 @@ namespace ValheimBackup
 
             // backup the worlds
             string startPath = charsPath;
-            string zipPath = @".\characters.zip";
+            string zipPath = Path.GetFullPath(LblBrowse.Text + @"\characters.zip");
             string extractPath = dir + @"\characters";
 
             // if the zip file already exists. Delete it so the app can zip it up again.
@@ -274,9 +274,9 @@ namespace ValheimBackup
 
  
             }
-            catch (Win32Exception win32Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show(win32Exception.Message);
+                MessageBox.Show(ex.Message);
             }
 
 
