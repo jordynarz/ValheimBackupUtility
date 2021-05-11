@@ -144,14 +144,16 @@ namespace ValheimBackup
 
 
                     // run the method that zips and unzips the worlds folder
-                    cpWorlds(dir);
+                   // cpWorlds(dir);
 
+                    zipWorlds(dir);
                     // step the progress bar to 3 of 4
                     progressBar1.PerformStep();
 
                     // run the method that zips and unzips the characters folder
-                    cpChars(dir);
+                   // cpChars(dir);
 
+                    zipChars(dir);
                     // Step the progress bar manually
                     progressBar1.PerformStep();
 
@@ -180,7 +182,7 @@ namespace ValheimBackup
 
         }
 
-        // method for zipping and zipping the worlds folder and contents to a new location.
+        // method for zipping and unzipping the worlds folder and contents to a new location.
         private void cpWorlds(string dir)
         {
             
@@ -209,6 +211,29 @@ namespace ValheimBackup
         }
 
         // method for zipping and zipping the characters folder and contents to a new location.
+        private void zipWorlds(string dir)
+        {
+            // call the User path method "_" discarding one argument
+            thePaths(out _, out string worldsPath, out _);
+
+            // create the directory for the zip file to live in
+            DirectoryInfo di = Directory.CreateDirectory(dir);
+
+            // backup the worlds
+            string startPath = worldsPath;
+            string zipPath = dir + @"\worlds.zip";
+            //string extractPath = dir + @"\characters";
+
+            // if the zip file already exists. Delete it so the app can zip it up again.
+
+
+            // create a zip folder with the "worlds" folder contents
+            ZipFile.CreateFromDirectory(startPath, zipPath);
+            // unzip the zip to copy the content of the folder to a new directory
+            //ZipFile.ExtractToDirectory(zipPath, extractPath);
+
+        }
+        // method for zipping and unzipping the characters folder and contents to a new location.
         private void cpChars(string dir)
         {
             // call the User path method "_" discarding one argument
@@ -235,7 +260,29 @@ namespace ValheimBackup
                 File.Delete(zipPath);
             }
         }
+        // method for zipping and zipping the characters folder and contents to a new location.
+        private void zipChars(string dir)
+        {
+            // call the User path method "_" discarding one argument
+            thePaths(out _, out string charsPath, out _);
+            // create the directory for the zip file to live in
+            DirectoryInfo di = Directory.CreateDirectory(dir);
 
+            // backup the worlds
+            string startPath = charsPath;
+            string zipPath = dir + @"\characters.zip";
+            //string extractPath = dir + @"\characters";
+
+            // if the zip file already exists. Delete it so the app can zip it up again.
+
+
+
+            // create a zip folder with the "worlds" folder contents
+            ZipFile.CreateFromDirectory(startPath, zipPath);
+            // unzip the zip to copy the content of the folder to a new directory
+            //ZipFile.ExtractToDirectory(zipPath, extractPath);
+
+        }
         // method to browse and locate a drive location
         private void BtnBrowse_Click(object sender, EventArgs e)
         {
