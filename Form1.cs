@@ -214,8 +214,8 @@ namespace ValheimBackup
         private void zipWorlds(string dir)
         {
             // call the User path method "_" discarding one argument
-            thePaths(out _, out string worldsPath, out _);
-
+            
+            thePaths(out string worldsPath, out _, out _);
             // create the directory for the zip file to live in
             DirectoryInfo di = Directory.CreateDirectory(dir);
 
